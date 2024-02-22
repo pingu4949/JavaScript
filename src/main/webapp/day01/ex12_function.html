@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	document.write("전~~~");
+	//msg1(); 오류
+</script>
+
+<script type="text/javascript">
+// 호이스팅 : 선언한 내용을 맨 처음으로 올리는 특징
+	msg1();
+	function msg1() {
+		document.write("<p>hi~~~</p>");
+	}
+	function msg1() {
+		document.write("<p>hello~~~</p>");		
+	}
+</script>
+<script type="text/javascript">
+	msg1(); /* 다른 블록에서 호출가능 */
+	
+	/* 익명은 호이스팅이 없다. */
+	//msg2(); 오류(호이스팅 안됨) 
+	let msg2 = function() {
+		document.write("<p>hello2~~~</p>");		
+	}
+	msg2();
+</script>
+<script type="text/javascript">
+
+	function msg3() {
+		document.write("<p>hello3~~~</p>");		
+		
+	}
+	// var는 상관없지만(상관없는게 단점) 
+	// let은 오류 걸림
+	
+	/* let msg3 = function() {
+		document.write("<p>hello32~~~</p>");		
+		
+	} */
+	msg3();
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	msg1(); /* 다른 블록에서 호출가능 */
+</script>
+</body>
+</html>

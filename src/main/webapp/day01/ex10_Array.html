@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 배열 : 
+	//
+
+	// 방법1
+	let arr = new Array();
+	arr[0] = 10;
+	arr[1] = true;
+	arr[2] = 'A';
+	arr[3] = '인재개발원';
+	arr[4] = 3.14;
+
+	//출력
+	for (var i = 0; i < arr.length; i++) {
+		document.write(`${arr[i]} &nbsp;&nbsp;&nbsp;`);
+	}
+	document.write('<hr>');
+	// 배열은 for..in
+	for ( var k in arr) {
+		// k는 값이 아니라 index이다.
+		document.write(`${arr[k]} &nbsp;&nbsp;&nbsp;`);
+
+	}
+	document.write('<hr>');
+	// 방법2
+	let arr2 = [ '포도', 15, 'false', 'k', 89.8 ];
+	// 배열은 for..in
+	for ( var k in arr2) {
+		// k는 값이 아니라 index이다.
+		document.write(`${arr2[k]} &nbsp;&nbsp;&nbsp;`);
+	}
+	document.write('<hr>');
+
+	// 방법3(문자열을 배열로)
+	let myDate = "java.js, html, js, spring";
+	let myArr = myDate.split(',');
+	for ( var k in myArr) {
+		// k는 값이 아니라 index이다.
+		document.write(`${myArr[k]} &nbsp;&nbsp;&nbsp;`);
+	}
+	document.write('<hr>');
+
+	// 배열을 문자열로 변경하자.
+	// 배열.join('구분자');
+	arr2 = [ '포도', 15, 'false', 'k', 89.8 ];
+	var str = arr2.join(" * * ");
+	document.write(str);
+	document.write('<hr>');
+	
+	// 자바스크립트에서의 배열은 추가 삭제가 가능하다.
+	let myArr2 = [ '포도', 15, 'false', 'k', 89.8 ];
+	/* 배열 끝 문자 추가 */
+	myArr2.push('JSP'); 
+	
+	console.log(myArr2);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;&nbsp;`)
+	}
+	document.write('<hr>');
+	
+	/* 배열 끝 문자 삭제 */
+	myArr2.pop(); 
+	
+	console.log(myArr2);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;&nbsp;`)
+	}
+	document.write('<hr>');
+
+	// unshift()와 shift()
+	
+	// 배열 맨 처음에 추가됨 unshift
+	myArr2.unshift('JSP');
+	console.log(myArr2);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;&nbsp;`)
+	}
+	document.write('<hr>');
+	
+	// 배열 맨 처음 삭제됨 shift
+	myArr2.shift();
+	console.log(myArr2);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]} &nbsp;&nbsp;&nbsp;`)
+	}
+	document.write('<hr>');
+</script>
+</head>
+<body>
+
+</body>
+</html>
