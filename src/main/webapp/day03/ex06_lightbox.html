@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>라이트박스</title>
+    <link rel="stylesheet" href="../css/day03_ex06_lightbox.css">
+  </head>
+  <body>
+    <div class="row">
+      <ul>
+        <li><img src="../images/tree-1-thumb.jpg" data-src="../images/tree-1.jpg" class="pic"></li>
+        <li><img src="../images/tree-2-thumb.jpg" data-src="../images/tree-2.jpg" class="pic"></li>
+        <li><img src="../images/tree-3-thumb.jpg" data-src="../images/tree-3.jpg" class="pic"></li> 
+        <li><img src="../images/tree-4-thumb.jpg" data-src="../images/tree-4.jpg" class="pic"></li>
+        <li><img src="../images/tree-5-thumb.jpg" data-src="../images/tree-5.jpg" class="pic"></li>
+        <li><img src="../images/tree-6-thumb.jpg" data-src="../images/tree-6.jpg" class="pic"></li>          
+      </ul>    
+    </div>
+    <div id="lightbox" onclick="pic_close()">
+            <img src="../images/tree-1.jpg" alt="" id="lightboxImage">            
+    </div>
+    <script type="text/javascript">
+    
+    	// pic에다가 .pic 있는 모든 이미지를 저장.
+    	let Pic= document.querySelectorAll(".pic");
+    	// lightbox에다가 #lightbox에 있는 이미지를 저장.
+    	let lightbox= document.querySelector("#lightbox");
+    	// lightboxImage에다가 #lightboxImage에 있는 이미지를 저장.
+    	let lightboxImage= document.querySelector("#lightboxImage");
+    	// pic파일을 k(인텍스크기만큼 추출하고 -> 이벤트로 -> 사용자가 클릭했을때 보여줘라)
+    	for (let k of Pic) {
+			k.addEventListener("click", showLigthbox);
+		}
+    	
+    	function showLigthbox(){
+    		/* 사용자가 (이벤트처리)클릭한 data-src를 bigPic에 저장해라. */
+    		let bigPic = this.getAttribute("data-src");
+    		// lightboxImage에있는 이미지주소(src)를 수정한다 -> bigpic으로
+    		lightboxImage.setAttribute("src", bigPic);
+    		// lightbox를 눌렀을 때 주소변경된 이미지로 보여준다.
+    		lightbox.style.display= "block";
+		}
+    	
+    	// 클릭했을 때 lightbox를 다시 보여주지 않는다.
+    	function pic_close() {
+    		alert(1);
+    		lightbox.style.display="none";
+    	} 
+    	/*  
+		setAttribute : 요소 속성 수정하기
+		getAttribute : 요소 속성 가져오기
+		removeAttribute : 요소 속성 제거하기
+ 		*/
+    </script>
+  </body>
+</html>

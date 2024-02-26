@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 날짜 클래스 : 현재날짜 나타내기 -> new Date();
+	//			  특정날짜 나타내기 -> new Date("2024-03-01");
+	//			  특정날짜 나타내기 -> new Date("2024/03/01");
+	//			  시간표시 나타내기 -> new Date("2024-03-01T09:44:00");
+	//			  끝에 Z가 붙으면 UTC(국제표준시);
+	//		      시간표시 나타태기 -> new Date("2024-03-01T09:44:00Z");
+	
+	document.write("날짜 : " + new Date() + "<br>");
+	document.write("날짜 : " + new Date("2024-03-01T09:44:00")+ "<br>");
+	document.write("날짜 : " + new Date("2024-03-01T09:44:00Z")+ "<br>");
+	document.write("<br>");
+	
+	// .toDateString()
+	document.write("날짜 : " + new Date().toDateString() + "<br>")
+	document.write("날짜 : " + new Date().toLocaleDateString() + "<br>")
+	document.write("<hr>");
+	
+	
+	// 년, 월, 일, 시, 분, 초, 요일
+	document.write("날짜(년도) : " + new Date().getFullYear() + "<br>"); 		//년도
+	document.write("날짜(월) : " + new Date().getMonth() + "<br>"); 	  		//월
+	document.write("날짜(년도) : " + new Date().getDate() + "<br>");	  		//일 
+	document.write("날짜(년도) : " + new Date().getHours() + "<br>");    		//시
+	document.write("날짜(년도) : " + new Date().getMinutes() + "<br>");  		//분
+	document.write("날짜(년도) : " + new Date().getSeconds() + "<br>");  		//초
+	
+	// 0=일요일 ~ 6=토요일
+	document.write("날짜(년도) : " + new Date().getDay() + "<br>"); 	  		//요일
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

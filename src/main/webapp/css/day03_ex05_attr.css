@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+#container{
+	width: 600px;
+	margin: 0 auto; /* 가운데 정렬 */
+	
+}
+#prod-pic, #desc{
+	float: left;
+}
+
+#prod-pic{
+	
+	margin: 20px 20px auto;		/* 상하좌우 */
+	padding: 0''
+}
+
+#small-pic{
+	margin-top: 20px;
+}
+
+.small{
+	margin-right: 10px;
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+
+#desc ul{
+	list-style-type: none;
+	font-size: 1rem; /*  16px */
+	line-height: 1.8; /* 자간 */
+}
+.bluetext{
+	color: blue;
+	font-weight: bold;
+}
+
+#view{
+	text-decoration: none;	/* 밑줄없애기 */
+	font-size: 0.9em; /* 부모크기따라감 */
+	color: blue;
+}
+
+#detail{
+	padding: 20px;
+	clear:both;
+	display: none;
+}
+
+#desc button{
+	padding: 10px 80px;
+	margin: 10px;
+}
