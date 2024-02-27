@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+/* 수평메뉴 */
+.nav {
+	width: 960px;
+	height: 60px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #ccc;
+}
+
+.nav ul {
+	list-style-type: none;
+	padding: 10px 0px;
+}
+
+/* inline-block : 옆으로 넘어가고 -> 높이와 넓이를 줄수있다. */
+.nav ul li {
+	display: inline-block;
+	width: 150px;
+	padding: 10px;
+}
+
+.nav a:link, .nav a:visited {
+	text-decoration: none;
+	font-size: 1rem;
+	color: purple;
+	box-sizing: border-box;
+}
+
+.nav a:hover {
+	background-color: black;
+	color: white;
+}
+
+.contents {
+	border: 2px solid black;
+	margin: 30px auto;
+	width: 400px;
+	padding: 30px;
+	border-radius: 10px;
+}
+
+#intro:target {
+	background-color: skyblue;
+	color: white;
+}
+
+#room:target {
+	background-color: pink;
+	color: white;
+}
+
+#absolute:target {
+	background-color: orange;
+	color: white;
+	
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="nav">
+			<ul>
+				<li><a href="#intro">이용 안내</a></li>
+				<li><a href="#room">객실 소개</a></li>
+				<li><a href="#absolute">예약 방법 및 요금</a></li>
+				<li><a href="ex02.html">예약하기</a></li>
+			</ul>
+		</nav>
+		<div id="intro" class="contents">
+			<h2>이용 안내</h2>
+			<p>Excepteur do est eiusmod nulla et veniam. Labore officia
+				officia ex aliqua exercitation aliqua laborum Lorem deserunt ut
+				ullamco labore anim.</p>
+		</div>
+		<div id="room" class="contents">
+			<h2>객실 소개</h2>
+			<p>Excepteur do est eiusmod nulla et veniam. Labore officia
+				officia ex aliqua exercitation aliqua laborum Lorem deserunt ut
+				ullamco labore anim.</p>
+		</div>
+		<div id="absolute" class="contents">
+			<h2>예약 방법 및 요금</h2>
+			<p>Excepteur do est eiusmod nulla et veniam. Labore officia
+				officia ex aliqua exercitation aliqua laborum Lorem deserunt ut
+				ullamco labore anim.</p>
+		</div>
+	</div>
+</body>
+</html>
