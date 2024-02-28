@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>map, some, every, filter, reduce</title>
+</head>
+<body>
+<!-- 
+	map : 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환합니다.
+ -->
+ 	<script type="text/javascript">
+ 	const numbers = [1, 4, 9, 16];
+ 	const result = numbers.map(function(num) {
+ 		/* 배열의 각 요소 마다 * 2 해주는 반환 값이다. */
+		return num * 2;
+	});
+ 	console.log(result);
+ 	
+ 	/* 이때 num은 numbers 배열의 각각의 요소를 말한다. */
+ 	const result2 = numbers.map((num)=> num * 2);
+ 	console.log(result2);
+ 	
+ 	// 현실에서는 DB정보 또는 제공하는 정보가 객체인 경우가 많다.
+ 	class Student{
+ 		// 생성자
+ 		constructor(name, kor, eng, math){
+			this.name = name;
+			this.kor = kor;
+			this.eng = eng;
+			this.math = math;
+		}
+ 	}
+ 	
+ 	const student1 = new Student('홍길동', 100, 99, 98);
+ 	const student2 = new Student('김길동', 60, 89, 100);
+ 	const student3 = new Student('고길동', 76, 38, 85);
+ 	const student4 = new Student('최길동', 48, 52, 78);
+ 	
+ 	const students = [student1, student2, student3, student4];
+ 	
+ 	const result3 = students.map((stu) => stu.eng);
+ 	console.log('영어 점수 :',result3);
+ 	
+ 	// some : 배열 안에서 주어진 조건을 하나라도 만족하면 true
+ 	console.log('숫자가 7이상인 학생이 있나요', numbers.some((num)=> num>=7));
+ 	console.log('수학 점수가 100점인 학생이 있나요?',students.some((stu) => stu.math === 100));
+ 	console.log('영어 점수가 50점미만인 학생이 있나요?',students.some((stu) => stu.eng < 50));
+ 	
+ 	// every : 배열안의 모든 요소가 주어진 조건을 만족하면 true
+ 	console.log('숫자가 모두 7이상인가요?', numbers.every((num)=> num>=7));
+ 	console.log('수학 점수가 모두 70점 이상인가요?',students.every((stu) => stu.math >= 70));
+ 	
+ 	// filter : 배열의 요소 중 주어진 조건에 만족하는 요소들만 새로운 배열로 반환
+ 	console.log('숫자 중 홀수만 출력하기 :', numbers.filter((num)=> num % 2 == 1));
+ 	console.log('영어점수 중 80점 이상인 학생만 출력하기',students.filter((stu) => stu.eng >= 70));
+ 	
+ 	/* reduce : 배열의 각 요소에 주어진 리듀서함수를 실행하고, 하나의 결과값을 반환한다.
+ 		리듀서 함수 : acc(누적값), cur(현재값), idx(현재인덱스), src(원본배열)
+ 		
+ 	
+ 	 배열.reduce((acc, cur, idx, src)=>{
+ 		return 리턴값}, 초기값);
+ 	
+ 	
+ 	*/
+ 	
+ 	const number2 =[1, 4, 9, 16];
+ 	number2.reduce((acc, cur, idx, src)=>{
+ 		console.log(`acc${acc}, cur${cur}, idx${idx}, src${src}`)
+ 		return acc}, 0);
+ 		
+ 	console.log("===============================")
+ 	number2.reduce((acc, cur, idx, src)=>{
+ 		console.log(`acc${acc}, cur${cur}, idx${idx}, src${src}`)
+ 		return acc}, 1);
+ 	
+ 	console.log("===============================")
+ 	const result4 = number2.reduce((acc, cur, idx, src)=>{
+ 					console.log(`acc${acc}, cur${cur}, idx${idx}, src${src}`)
+ 					return acc + cur}, 0);
+ 					console.log('결과 :', result4)
+ 	
+ 	console.log("===============================")
+ 	
+ 	const fluits = ["길채", "구잠", "량음", "종종이", "길채", "장현",];
+ 					
+ 	// 비어있는 배열에서 includes(현재값)을 이용해서 중복 제거
+ 	console.log(fluits);
+ 	const result5 = fluits.reduce((acc, cur)=> {
+ 		// 현재값이랑 누적된 값이 같지 않으면 누적값에 현재값을 넣어주자.
+ 		if (acc.includes(cur) === false) {
+ 			// 배열에 넣기
+			acc.push(cur);
+		}
+ 		
+ 		return acc;
+ 	},[]);
+ 	
+ 	console.log(result5);
+ 	
+ 	const sum = students.map((stu) => stu.kor + stu.eng + stu.math);
+ 	console.log('총합 :', sum);
+ 	
+ 	const avg = students.map((stu) => stu.kor + stu.eng + stu.math / 3);
+ 	console.log('평균 :', avg);
+ 	
+ 	</script>
+</body>
+</html>
